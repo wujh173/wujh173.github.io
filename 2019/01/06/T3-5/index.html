@@ -6,17 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>用户贷款风险预测 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="study">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="###要求  根据用户的基本身份信息、消费行为、银行还款等数据信息，建立风险控制模型，来预测用户是否会逾期还款。1数据准备：个人征信中的user_info_train.txt，overdue_train.txt和Billing_feature.csv。选择user_info_train.txt中的个人身份信息和Billing_feature.csv中的信用卡消费行为作为特征集合，overdue_t">
+<meta name="keywords" content="svm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="用户贷款风险预测">
+<meta property="og:url" content="http://yoursite.com/2019/01/06/T3-5/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="study">
+<meta property="og:description" content="###要求  根据用户的基本身份信息、消费行为、银行还款等数据信息，建立风险控制模型，来预测用户是否会逾期还款。1数据准备：个人征信中的user_info_train.txt，overdue_train.txt和Billing_feature.csv。选择user_info_train.txt中的个人身份信息和Billing_feature.csv中的信用卡消费行为作为特征集合，overdue_t">
+<meta property="og:image" content="http://yoursite.com/2019/01/06/T3-5/user_info_train.png">
+<meta property="og:image" content="http://yoursite.com/2019/01/06/T3-5/overdue_train.png">
+<meta property="og:updated_time" content="2019-01-06T04:45:45.307Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="study">
+<meta name="twitter:title" content="用户贷款风险预测">
+<meta name="twitter:description" content="###要求  根据用户的基本身份信息、消费行为、银行还款等数据信息，建立风险控制模型，来预测用户是否会逾期还款。1数据准备：个人征信中的user_info_train.txt，overdue_train.txt和Billing_feature.csv。选择user_info_train.txt中的个人身份信息和Billing_feature.csv中的信用卡消费行为作为特征集合，overdue_t">
+<meta name="twitter:image" content="http://yoursite.com/2019/01/06/T3-5/user_info_train.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -156,36 +161,62 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-T3-5" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2019" class="archive-year">2019</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2019/01/06/T3-5/" class="archive-article-date">
-  	<time datetime="2019-01-06T04:20:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-06</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2019/01/06/T3-5/">用户贷款风险预测</a>
+    <h1 class="article-title" itemprop="name">
+      用户贷款风险预测
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2019/01/06/T3-5/" class="archive-article-date">
+  	<time datetime="2019-01-06T04:20:12.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-01-06</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>###要求</p>
+<blockquote>
+<p>根据用户的基本身份信息、消费行为、银行还款等数据信息，建立风险控制模型，来预测用户是否会逾期还款。<br><br>1数据准备：个人征信中的user_info_train.txt，overdue_train.txt和Billing_feature.csv。选择user_info_train.txt中的个人身份信息和Billing_feature.csv中的信用卡消费行为作为特征集合，overdue_train.txt的违约信息作为标签。<br><br>2数据清洗：将Billing_feature中特征值皆为0的用户删除，可选择f1-f6中的几个特征。<br><br>3数据预处理：将数据集合分成train和test两部分。<br><br>4模型构建：分别用libsvm对train集合进行svm分类和svr回归分析，构建分类和回归模型。用test集合对分类和回归模型进行评估。<br></p>
+</blockquote>
+<p>###实现过程<br>首先在user_info_train.txt的首行添加如下一条记录<br></p>
+<p><div align="center"><br>    <img src="/2019/01/06/T3-5/user_info_train.png"><br></div><br>接着在overdue_train.txt的首行同样添加一条记录<br></p>
+<p><div align="center"><br>    <img src="/2019/01/06/T3-5/overdue_train.png"><br></div><br>运行如下代码后得到train.txt和test.txt<br><a id="more"></a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas</span><br><span class="line"><span class="keyword">import</span> imblearn.combine</span><br><span class="line"></span><br><span class="line">b_feature = pandas.read_csv(<span class="string">"Billing_feature.csv"</span>)</span><br><span class="line">x = b_feature.any(axis=<span class="string">'columns'</span>)</span><br><span class="line">y = []</span><br><span class="line"><span class="keyword">for</span> k, v <span class="keyword">in</span> x.iteritems():</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> v:</span><br><span class="line">        y.append(k)</span><br><span class="line">b_feature = b_feature.drop(y)   <span class="comment">#丢弃值全0的行</span></span><br><span class="line">tag = pandas.read_csv(<span class="string">"overdue_train.txt"</span>)</span><br><span class="line">user_info = pandas.read_csv(<span class="string">'user_info_train.txt'</span>).sort_values(by=[<span class="string">'id'</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># 合并数据</span></span><br><span class="line">all_data = pandas.concat([tag, b_feature, user_info], axis=<span class="number">1</span>).dropna()</span><br><span class="line"></span><br><span class="line">sm = imblearn.combine.SMOTEENN()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 对f1-f6进行归一化</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">1</span>, <span class="number">7</span>):</span><br><span class="line">    normalization = (all_data[<span class="string">'f'</span> + str(i)] - all_data[<span class="string">'f'</span> + str(i)].min()) / (</span><br><span class="line">                all_data[<span class="string">'f'</span> + str(i)].max() - all_data[<span class="string">'f'</span> + str(i)].min())</span><br><span class="line">    all_data = all_data.drop([<span class="string">'f'</span> + str(i)], axis=<span class="number">1</span>)</span><br><span class="line">    all_data.insert(<span class="number">1</span>, <span class="string">'f'</span> + str(i), normalization)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 数据平衡</span></span><br><span class="line">feature = all_data[[<span class="string">"f1"</span>, <span class="string">"f2"</span>, <span class="string">"f3"</span>, <span class="string">"f5"</span>, <span class="string">"occ"</span>, <span class="string">"edu"</span>, <span class="string">"marry"</span>]].values</span><br><span class="line">tag = all_data[<span class="string">'tag'</span>].values</span><br><span class="line">x1, y1 = sm.fit_resample(feature[<span class="number">10000</span>:], tag[<span class="number">10000</span>:])</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"train.csv"</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> w <span class="keyword">in</span> range(<span class="number">0</span>, len(y1)):</span><br><span class="line">        f.write(str(y1[w]))</span><br><span class="line">        <span class="keyword">for</span> t <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">7</span>):</span><br><span class="line">            f.write(<span class="string">" "</span> + str(t + <span class="number">1</span>) + <span class="string">":"</span> + str(x1[w][t]))</span><br><span class="line">        f.write(<span class="string">"\n"</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">"test.csv"</span>, <span class="string">'w'</span>) <span class="keyword">as</span> f:</span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">10000</span>):</span><br><span class="line">        f.write(str(tag[i]) + <span class="string">" "</span>)</span><br><span class="line">        <span class="keyword">for</span> m <span class="keyword">in</span> range(<span class="number">0</span>, <span class="number">7</span>):</span><br><span class="line">            f.write(str(m + <span class="number">1</span>) + <span class="string">':'</span> + str(x1[i][m]) + <span class="string">" "</span>)</span><br><span class="line">        f.write(<span class="string">"\n"</span>)</span><br></pre></td></tr></table></figure></p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -197,170 +228,106 @@
 		</ul>
 	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
       
-        </div></section>
+
       
+
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/18/hotel/" class="archive-article-date">
-  	<time datetime="2018-01-18T15:20:06.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-18</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/18/hotel/">酒店信息管理系统</a>
-    </h1>
-  
+      </div>
+    </span>
+  </div>
+</div>
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">C语言 酒店</a>
-        		</li>
-      		
-		</ul>
-	</div>
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/01/06/T3-5/" alt="微信分享二维码">
+    </div>
+</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/13/health/" class="archive-article-date">
-  	<time datetime="2018-01-12T16:46:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-13</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2018/01/18/hotel/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">酒店信息管理系统</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
+        
+        
+    </div>
+</aside>
+
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/13/health/">养生知识100条</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">养生</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/11/first/" class="archive-article-date">
-  	<time datetime="2018-01-11T12:21:35.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-11</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/11/first/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">hello world</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/10/hello-world/" class="archive-article-date">
-  	<time datetime="2018-01-10T11:36:08.742Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-10</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/10/hello-world/">Hello World</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -383,8 +350,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

@@ -178,13 +178,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>###要求</p>
-<blockquote>
+        <h3 id="要求"><a href="#要求" class="headerlink" title="要求"></a>要求</h3><blockquote>
 <p>根据用户的基本身份信息、消费行为、银行还款等数据信息，建立风险控制模型，来预测用户是否会逾期还款。<br><br>1数据准备：个人征信中的user_info_train.txt，overdue_train.txt和Billing_feature.csv。选择user_info_train.txt中的个人身份信息和Billing_feature.csv中的信用卡消费行为作为特征集合，overdue_train.txt的违约信息作为标签。<br><br>2数据清洗：将Billing_feature中特征值皆为0的用户删除，可选择f1-f6中的几个特征。<br><br>3数据预处理：将数据集合分成train和test两部分。<br><br>4模型构建：分别用libsvm对train集合进行svm分类和svr回归分析，构建分类和回归模型。用test集合对分类和回归模型进行评估。<br></p>
 </blockquote>
-<p>###实现过程<br>首先在user_info_train.txt的首行添加如下一条记录<br></p>
-<p><div align="center"><br>    <img src="/2019/01/06/T3-5/user_info_train.png"><br></div><br>接着在overdue_train.txt的首行同样添加一条记录<br></p>
-<p><div align="center"><br>    <img src="/2019/01/06/T3-5/overdue_train.png"><br></div><br>运行如下代码后得到train.txt和test.txt<br></p>
+<h3 id="实现过程"><a href="#实现过程" class="headerlink" title="实现过程"></a>实现过程</h3><p>首先在user_info_train.txt的首行添加如下一条记录<br></p>
+<div align="center"><br>    <img src="/2019/01/06/T3-5/user_info_train.png"><br></div><br>接着在overdue_train.txt的首行同样添加一条记录<br><br><div align="center"><br>    <img src="/2019/01/06/T3-5/overdue_train.png"><br></div><br>运行如下代码后得到train.csv和test.csv<br>
         
           <a class="article-more-a" href="/2019/01/06/T3-5/#more">展开全文 >></a>
         
@@ -644,11 +642,11 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">养生</a>
+                <a href="javascript:void(0)" class="js-tag color2">hello world</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">hello world</a>
+                <a href="javascript:void(0)" class="js-tag color3">养生</a>
               </li>
              
               <li class="article-tag-list-item">
